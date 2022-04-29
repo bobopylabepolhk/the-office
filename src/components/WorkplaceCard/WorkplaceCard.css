@@ -1,0 +1,27 @@
+.workplace-card {
+	min-width: 180px;
+	height: fit-content;
+	padding-bottom: 10px;
+}
+
+.workplace-card__info {
+	overflow-wrap: break-word;
+	line-height: 20px;
+}
+
+.workplace-card__link a {
+	color: var(--accent-color2);
+	text-decoration: none;
+}
+
+.workplace-card__link a:hover {
+	text-decoration: underline;
+}
+
+
+.workplace-card__kick-out {
+	display: flex;
+	justify-content: end;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}

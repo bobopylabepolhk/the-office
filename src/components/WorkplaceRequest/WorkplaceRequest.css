@@ -1,0 +1,20 @@
+.workplace-request {
+	width: 100%;
+}
+
+.workplace-request__row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.workplace-request__employee {
+	margin-right: 100px;
+}
+
+.workpalce-request__section-headline {
+	margin-bottom: 18px;
+}
+
+.workplace-request__timepicker {
+	margin-right: 15px;
+}

@@ -1,0 +1,13 @@
+.footer {
+	width: 100vw;
+	background-color: transparent;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	bottom: 40px;
+}
+
+.footer__btn {
+	box-shadow: 0px -4px 25px 3px var(--grey-color)
+}

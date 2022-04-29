@@ -1,0 +1,30 @@
+.workplace-card2 {
+	cursor: pointer;
+	transition: all .42s ease-in-out;
+	margin-bottom: 40px;
+}
+
+.workplace-card2__name {
+	margin-right: 20px;
+}
+
+.workplace-card2__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.workplace-card2--selected {
+	box-shadow: 0px 2px 6px 3px var(--light-grey-color);
+}
+
+.workplace-card2:not(.workplace-card2--selected) {
+	opacity: .6;
+	background-color: var(--light-grey-color);
+	box-shadow: 0px 5px 8px 15px var(--light-grey-color);
+}
+
+.workplace-card2:not(.workplace-card2--selected):hover {
+	opacity: .789;
+	filter: brightness(107%)
+}

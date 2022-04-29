@@ -1,0 +1,21 @@
+.error {
+	padding: 0 20px;
+	border-radius: 8px;
+	border: 1px solid var(--error-color);
+	background-color: var(--error-color2);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.error-icon {
+	width: 70px;
+	height: 70px;
+	fill: var(--error-color);
+	margin-left: -15px;
+}
+
+.error__paragraph {
+	color: var(--error-color);
+	margin-left: -5px;
+}

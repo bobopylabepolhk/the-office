@@ -1,0 +1,32 @@
+.workplace-details {
+	padding: 20px 30px 30px 30px;
+}
+
+.workplace-details__row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.workplace-details__caption {
+	margin-bottom: 20px;
+}
+
+.workplace-details__col {
+	margin-right: 140px;
+}
+
+.workplace-details__headline {
+	font-size: 36px;
+}
+
+.workplace-doesnt-exist {
+	text-align: center;
+	font-size: 5.5vw;
+	line-height: 100vh;
+}
+
+.workplace-doesnt-exist .back-button {
+	position: absolute;
+	left: 30px;
+	top: 20px;
+}

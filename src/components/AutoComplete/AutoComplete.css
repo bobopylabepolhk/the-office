@@ -1,0 +1,3 @@
+.autocomplete__input {
+	width: calc(100% - 14px);
+}

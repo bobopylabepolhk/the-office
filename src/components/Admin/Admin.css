@@ -1,0 +1,16 @@
+.admin {
+	padding: 20px 30px 30px 30px;
+}
+
+.admin-section {
+	margin-top: 60px;
+}
+
+.admin-section__headline {
+	display: flex;
+	align-items: center;
+}
+
+.admin-section__headline h2 {
+	margin-right: 20px;
+}

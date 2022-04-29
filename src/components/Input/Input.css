@@ -1,0 +1,19 @@
+.input {
+	font-size: 16px;
+	font-weight: normal;
+	border-radius: 3px;
+	outline: none;
+	transition: all .15s ease-in-out;
+	height: 35px;
+	padding-left: 10px;
+	border: 2px solid var(--light-grey-color);
+	color: var(--black-color);
+}
+
+.input::placeholder {
+	color: var(--grey-color);
+}
+
+.input:hover, .input:focus {
+	border: 2px solid var(--accent-color);
+}

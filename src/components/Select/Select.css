@@ -1,0 +1,12 @@
+.select__selected {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.select__selected::after {
+	content: "▼";
+    position: absolute;
+    right: 10px;
+	margin-top: 2px;
+}

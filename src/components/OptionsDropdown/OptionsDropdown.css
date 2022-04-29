@@ -1,0 +1,16 @@
+.options {
+	max-height: 80px;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-radius: 4px;
+	border: 1px solid var(--light-grey-color);
+	border-top: none;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-width: none;
+}
+
+.options::-webkit-scrollbar {
+	display: none;
+}

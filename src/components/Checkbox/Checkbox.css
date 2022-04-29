@@ -1,0 +1,29 @@
+.checkbox {
+	display: flex;
+	align-items: center;
+}
+
+.checkbox__hidden {
+	visibility: hidden;
+	position: absolute;
+}
+
+.checkbox__label {
+	cursor: pointer;
+}
+
+.checkbox__hidden + .checkbox__label::before {
+	content: '';
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	width: 18px;
+	height: 18px;
+	border: 2px solid var(--light-grey-color);
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+.checkbox__hidden:checked + .checkbox__label::before {
+	background-color: var(--accent-color);
+}

@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--accent-color: #7fbd3e;
+	--accent-color2: #83ce33;
+	--error-color: #f95345;
+	--error-color2: #ffc5c5;
+	--error-color3: #e23727;
+	--light-grey-color: #f0f2f4;
+	--grey-color: #c0c1c2;
+	--grey-color2: #bbb8b8;
+	--black-color: #000;
+	--bg-color: rgb(245, 245, 245);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	background-color: var(--bg-color);
+	margin: 0;
+	font-family: sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.no-bullets {
+	list-style-type: none;
+}
+
+.button-reset {
+	background-color: transparent;
+	border: none;
+}
+
+.input-with-label {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.input-with-label__label {
+	padding-bottom: 5px;
+}
+
+.card {
+	padding: 0 20px;
+	border-radius: 20px;
+	box-shadow: 0px 5px 12px 18px var(--light-grey-color);
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
+}
+
+.card-container .card {
+	margin-right: 20px;
+}
+
+.card__buttons-container {
+	align-self: end;
+	margin-top: 20px;
+	padding-bottom: 20px;
+	margin-right: -10px;
+}
+
+.card__buttons-container .button {
+	margin-right: 10px;
+}
+
+@media screen and (max-width: 790px) {
+	.card-container .card {
+		margin-top: 0;
+		margin-bottom: 19px;
+		flex-grow: 2;
+	}
 }

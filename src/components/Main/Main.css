@@ -1,0 +1,14 @@
+.main {
+	padding: 0 30px;
+}
+
+.main__workplaces {
+	margin-top: 60px;
+}
+
+@media screen and (max-width: 720px) {
+	.main__workplaces {
+		margin-top: 20px;
+	}
+	
+}
