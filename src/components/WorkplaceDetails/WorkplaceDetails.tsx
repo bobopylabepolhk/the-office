@@ -5,17 +5,18 @@ import Button from '../Button/Button'
 import BackButton from '../BackButton/BackButton'
 import WorkplaceRequestDialog from '../WorkplaceRequestDialog/WorkplaceRequestDialog'
 import getDisplayTime from '../../utils/getDisplayTime'
+import mockFetch from '../../api'
+import getCurrentEmployeeFromLocalStorage from '../../utils/getCurrentEmployeeFromLocalStorage'
 import { requestsActions } from '../../store/reducers/requests'
 import useDispatch from '../../hooks/useDispatch'
 import EmployeeCard from '../EmployeeCard/EmployeeCard'
 import './WorkplaceDetails.css'
-import mockFetch from '../../api'
 
 const WorkplaceDetails = () => {
 	const dispatch = useDispatch()
 	const id = Number(useParams().id)
 	const [workplace, setWorkplace] = useState<Workplace | null>(null)
-	const { setWorkplaceId, triggerModal } = requestsActions
+	const { setWorkplaceId, changeEmployeeBirthDate, changeEmployeeName, changeEmployeeRole, triggerModal } = requestsActions
 
 	useEffect(() => {
 		mockFetch('workplaces').get(id).then((workplace: Workplace) => setWorkplace(workplace))
@@ -32,6 +33,11 @@ const WorkplaceDetails = () => {
 	
 
 	const prepare = () => {
+		const currentEmployee = getCurrentEmployeeFromLocalStorage()!
+
+		dispatch(changeEmployeeBirthDate(new Date(currentEmployee.birthDate)))
+		dispatch(changeEmployeeName(currentEmployee.name))
+		dispatch(changeEmployeeRole(currentEmployee.role))
 		dispatch(setWorkplaceId(workplace.id))
 		dispatch(triggerModal())
 	}

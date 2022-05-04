@@ -11,7 +11,8 @@ export interface Props {
 
 const Select = ({ value, items, onItemClick } : Props) => {
 	const selectRef = useRef(null)
-	const { showDropdown, hideDropdownOnItemClick, onKeyDown, activeIndex, dropdown } = useDropdown(items, selectRef, onItemClick)
+	const dropdownRef = useRef(null)
+	const { showDropdown, hideDropdownOnItemClick, onKeyDown, activeIndex, dropdown } = useDropdown(items, selectRef, dropdownRef, onItemClick)
 
 	return (
 		<div className='select' ref={selectRef}>
@@ -25,7 +26,7 @@ const Select = ({ value, items, onItemClick } : Props) => {
 				{value}
 			</div>
 			{dropdown &&
-				<OptionsDropdown items={items} onItemClick={hideDropdownOnItemClick} activeIndex={activeIndex} />
+				<OptionsDropdown ref={dropdownRef} items={items} onItemClick={hideDropdownOnItemClick} activeIndex={activeIndex} />
 			}
 		</div>
 	)

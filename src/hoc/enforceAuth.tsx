@@ -1,11 +1,12 @@
 import React, { useEffect, FC } from 'react'
+import getCurrentEmployeeFromLocalStorage from '../utils/getCurrentEmployeeFromLocalStorage'
 import { useNavigate } from 'react-router-dom'
 
 const enforceAuth = (Component: FC) => (props: any) => {
 	const navigate = useNavigate()
 	useEffect(() => {
-		const currentEmployee = localStorage.getItem('currentEmployee')
-		if (!currentEmployee || !JSON.parse(currentEmployee).id) {
+		const currentEmployee = getCurrentEmployeeFromLocalStorage() 
+		if (!currentEmployee) {
 			navigate('/auth')
 		}
 	}, [navigate])

@@ -10,7 +10,7 @@ interface Props {
 const Option = ({ value, onClick, isActive } : Props) => {
 	return (
 		<li className={`option ${isActive ? 'option--active' : ''}`}>
-			<button className="option__button" tabIndex={-1} onClick={onClick}>{value}</button>
+			<button className='option__button' tabIndex={-1} onClick={onClick}>{value}</button>
 		</li>
 	)
 }

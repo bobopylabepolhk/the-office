@@ -124,7 +124,8 @@ const WorkplaceRequest = () => {
 					/>
 					<BirthDatePicker 
 						label='Дата рождения' 
-						onDateChange={onEmployeeBirthDateChange} 
+						onDateChange={onEmployeeBirthDateChange}
+						initialValue={employeeBirthDate}
 					/>
 					<RoleSelect 
 						value={employeeRole} 
@@ -155,7 +156,7 @@ const WorkplaceRequest = () => {
 				</div>
 			</div>
 
-			<div className='workplace-request__row workplace-request__workplaces'>
+			<div className='workplace-request__row workplace-request__workplaces no-scroll'>
 				<div>
 					<h3 className='workplace-request__section-headline'>Подходящие рабочие места</h3>
 					<div className='card-container'>

@@ -10,7 +10,3 @@
 	overflow-y: scroll;
 	scrollbar-width: none;
 }
-
-.options::-webkit-scrollbar {
-	display: none;
-}

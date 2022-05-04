@@ -55,7 +55,7 @@ body {
 }
 
 .card__buttons-container {
-	align-self: end;
+	align-self: flex-end;
 	margin-top: 20px;
 	padding-bottom: 20px;
 	margin-right: -10px;
@@ -63,6 +63,14 @@ body {
 
 .card__buttons-container .button {
 	margin-right: 10px;
+}
+
+.no-scroll {
+	scrollbar-width: none;
+}
+
+.no-scroll::-webkit-scrollbar {
+	display: none;
 }
 
 @media screen and (max-width: 790px) {

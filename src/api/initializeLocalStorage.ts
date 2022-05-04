@@ -86,6 +86,132 @@ const initialWorkplaces : Array<Workplace> = [
 			hours: 19,
 			minutes: 0
 		},
+	},
+	{
+		id: 1,
+		name: 'Первое Рабочее место',
+		employee: initialEmployees[0],
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 9,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 18,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 2,
+		name: 'Второе Рабочее место',
+		employee: null,
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 12,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 22,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 3,
+		name: 'Третье Рабочее место',
+		employee: initialEmployees[1],
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 8,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 19,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 4,
+		name: 'Четвёртое Рабочее место',
+		employee: null,
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 10,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 19,
+			minutes: 0
+		},
+	},
+	{
+		id: 1,
+		name: 'Первое Рабочее место',
+		employee: initialEmployees[0],
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 9,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 18,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 2,
+		name: 'Второе Рабочее место',
+		employee: null,
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 12,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 22,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 3,
+		name: 'Третье Рабочее место',
+		employee: initialEmployees[1],
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 8,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 19,
+			minutes: 0
+		},
+	},
+
+	{
+		id: 4,
+		name: 'Четвёртое Рабочее место',
+		employee: null,
+		devices: [],
+		isRemote: false,
+		opensAt: {
+			hours: 10,
+			minutes: 0
+		},
+		closesAt: {
+			hours: 19,
+			minutes: 0
+		},
 	}
 ]
 
@@ -112,7 +238,6 @@ const hashAccessCodes = () => new Promise<string[]>((resolve) => {
 
 const initializeLocalStorage = () => {
 	if (!localStorage.getItem('__DID_PAGE_EVER_LOAD__')) {
-
 		hashAccessCodes().then(hashes => {
 			const employeesWithHashes = initialEmployees.map((employee, index) => ({
 				...employee, accessCode: employee.accessCode ? hashes[index] : undefined 

@@ -18,3 +18,8 @@
 .workplace-request__timepicker {
 	margin-right: 15px;
 }
+
+.workplace-request__workplaces {
+	overflow: scroll;
+	max-height: 360px
+}

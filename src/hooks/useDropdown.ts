@@ -1,6 +1,6 @@
 import React, { KeyboardEvent, RefObject, useEffect, useState } from 'react'
 
-const useDropdown = (items: string[], ref: RefObject<HTMLElement>, onItemClick: (value: string) => void) => {
+const useDropdown = (items: string[], containerRef: RefObject<HTMLElement>, dropdownRef: RefObject<HTMLElement>, onItemClick: (value: string) => void) => {
 	const [dropdown, setDropdown] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0)
 
@@ -15,7 +15,7 @@ const useDropdown = (items: string[], ref: RefObject<HTMLElement>, onItemClick: 
 
 	useEffect(() => {
 		const onClickOutside = (e: MouseEvent) => {
-			if (ref.current && !ref.current.contains(e.target as Node | null)) {
+			if (containerRef.current && !containerRef.current.contains(e.target as Node | null)) {
 				setDropdown(false)
 			}
 		}
@@ -25,45 +25,52 @@ const useDropdown = (items: string[], ref: RefObject<HTMLElement>, onItemClick: 
 		return () => {
 			document.removeEventListener('click', onClickOutside, true)
 		}
-	}, [ref])
+	}, [containerRef])
 
 	const onKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-		switch (e.key) {
-			case 'Tab':
-				setDropdown(false)
-			break
-			
-			case 'Enter':
-				hideDropdownOnItemClick(items[activeIndex])
-			break
-			
-			case 'ArrowUp':
-				if (activeIndex > 0) {
-					setActiveIndex((prevState) => prevState - 1)
-				}
-
-				else {
-					setActiveIndex(items.length - 1)
-				}
+		if (dropdownRef.current) {
+			switch (e.key) {
+				case 'Tab':
+					setDropdown(false)
+				break
 				
-			break
-
-			case 'ArrowDown':
-				if (activeIndex < items.length - 1) {
-					setActiveIndex((prevState) => prevState + 1)
-				}
-
-				else {
-					setActiveIndex(0)
-				}
-			break
-
-			default:
-			break
+				case 'Enter':
+					hideDropdownOnItemClick(items[activeIndex])
+				break
+				
+				case 'ArrowUp':
+					if (activeIndex > 0) {
+						setActiveIndex((prevState) => prevState - 1)
+						dropdownRef.current.scrollTop -= 20
+					}
+	
+					else {
+						setActiveIndex(items.length - 1)
+						dropdownRef.current.scrollTop = dropdownRef.current.scrollHeight
+					}
+					
+				break
+	
+				case 'ArrowDown':
+					if (activeIndex < items.length - 1) {
+						setActiveIndex((prevState) => prevState + 1)
+						dropdownRef.current.scrollTop += 20
+					}
+	
+					else {
+						setActiveIndex(0)
+						dropdownRef.current.scrollTop = 0
+					}
+				break
+	
+				default:
+				break
+			}
 		}
+		
 	}
 
-	return {dropdown, onKeyDown, showDropdown, hideDropdownOnItemClick, activeIndex}
+	return { dropdown, onKeyDown, showDropdown, hideDropdownOnItemClick, activeIndex }
 }
 
 export default useDropdown

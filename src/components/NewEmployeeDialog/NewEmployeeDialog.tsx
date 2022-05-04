@@ -38,9 +38,11 @@ const NewEmployeeDialog = () => {
 		dispatch(clearNewEmployee())
 	}
 
-	const submit = () => {
+	const addEmployees = () => {
 		dispatch(addEmployee({ name, birthDate, role })).then(() => triggerModal())
 	}
+
+	const readyToAddEmployee = name
 
 	if (isModalOpen) {
 		return (
@@ -56,7 +58,7 @@ const NewEmployeeDialog = () => {
 						onItemClick={onRoleSet}
 					/>
 	
-					<Button text='Добавить' onClick={submit} />
+					<Button text='Добавить' onClick={addEmployees} disabled={!readyToAddEmployee} />
 				</div>
 			</DialogWindow>
 		)
